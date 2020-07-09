@@ -12,8 +12,10 @@ const FILTER_TITLES = {
 
 const Footer = (props) => {
 	// Créez votre constante permettant de récupère tous nos props via le `destructuring assigment`.
+	const {completedCount,activeCount,currentFilter,onChangeFilter,onClearCompleted} = props;
 	// Créez votre constante `itemWord` permettant d'afficher les tâches restantes.
-
+	const itemWord = " taches restant";
+	
 	return (
 		<footer className="footer">
 			<span className="todo-count">
@@ -50,5 +52,13 @@ const Footer = (props) => {
 }
 
 // Codez le propTypes du footer ici.
+
+Footer.propTypes ={
+	completedCount: PropTypes.number.isRequired,
+	activeCount: PropTypes.number.isRequired,
+	currentFilter: PropTypes.string.isRequired,
+	onChangeFilter: PropTypes.func.isRequired,
+	onClearCompleted: PropTypes.func.isRequired,
+}
 
 export default Footer
